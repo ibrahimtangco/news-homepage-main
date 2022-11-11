@@ -1,0 +1,270 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;700;800&display=swap');
+
+:root{
+    --soft-orange: hsl(35, 77%, 62%);
+    --soft-red: hsl(5, 85%, 63%);
+    --off-white: hsl(36, 100%, 99%);
+    --grayish-blue: hsl(233, 8%, 79%);
+    --dark-grayish-blue: hsl(236, 13%, 42%);
+    --very-dark-blue: hsl(240, 100%, 5%);
+}
+
+*,
+::before,
+::after{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    list-style: none;
+    text-decoration: none;
+}
+html{
+    font-size: 15px;
+    scroll-behavior: smooth;
+}
+body{
+    font-family: 'Inter', sans-serif;
+}
+.grid{
+    display: grid;
+}
+.flex{
+    display: flex;
+}
+.fs-1{
+    font-size: 1rem;
+}
+.fs-1-2{
+    font-size: 1.2rem;
+}
+.fs-2-5{
+    font-size: 2.5rem;
+}
+.fs-2{
+    font-size: 2rem;
+}
+.bold{
+    font-weight: bold;
+}
+.white{
+    color: var(--off-white);
+}
+.grayish-blue{
+    color: var(--grayish-blue);
+}
+.soft-orange{
+    color: var(--soft-orange);
+}
+.dark-grayish-blue, a{
+    color: var(--dark-grayish-blue);
+}
+.banner-img img, .menu img{
+    display: block;
+    width: 100%;
+}
+.container{
+    width: 80%;
+    margin: auto;
+}
+header{
+    justify-content: space-between;
+    align-items: center;
+    padding: 1.5rem 0;
+}
+.title-container{
+    padding: 1rem 0;
+}
+.title-container h1{
+    font-weight: 800;
+    font-size: 3rem;
+    line-height: 1.1em;
+}
+.description p{
+    line-height: 1.6em;
+    margin-bottom: 1rem;
+}
+.description button{
+    width: 200px;
+    height: 45px;
+    letter-spacing: .3em;
+    font-weight: 700;
+    text-transform: uppercase;
+    border: 1px solid var(--soft-red);
+    background-color: var(--soft-red);
+    color: var(--off-white);
+}
+.new-feature{
+    margin: 3rem 0;
+    background-color: var(--very-dark-blue);
+}
+.new{
+    padding: 1.5rem;
+    border-bottom: 1px solid var(--grayish-blue);
+}
+.new h2{
+    margin-bottom: 1rem;
+}
+.new p{
+    padding-bottom: 1rem;
+    line-height: 1.6em;
+}
+.new p:first-of-type{
+    margin-top: 1rem;
+}
+.products{
+    grid-template-columns: repeat(3, 1fr);
+    grid-gap: 2rem;
+    margin-bottom: 4rem;
+}
+.product{
+    grid-column: 1 / 4;
+}
+.product{
+    display: flex;
+
+}
+.product img{
+    width: 100px;
+    height: auto;
+    margin-right: 2em;
+}
+.prod-info{
+    display: flex;
+    flex-direction: column;
+    gap: .5rem;
+}
+.prod-info p:last-of-type{
+    line-height: 1.5em;
+    font-size: .9rem;
+}
+.active{
+    cursor: pointer;
+}
+.orange-hover:hover{
+    color: var(--soft-orange);
+}
+.red-hover:hover{
+    color: var(--soft-red);
+}
+.menu{
+    position: absolute;
+    right: 10%;
+    position: fixed;
+    background-color: #fff;
+    border-radius: 3px;
+    padding: .5rem;
+    top: 5%;
+    cursor: pointer;
+    z-index: 1000;
+}
+button:hover{
+    background-color: var(--very-dark-blue);
+    border: 1px solid var(--very-dark-blue);
+}
+header{
+    position: relative;
+}
+#sideNav{
+    z-index: 1;
+    position: absolute;
+    display: block;
+    background-color: rgba(255, 255, 255, 0.936);
+    width: 100%;
+    height: 100vh;
+    top: 0;
+    right: -100%;
+    transition: .3s;
+}
+nav ul{
+    text-align: end;
+    padding: 5rem 0;
+}
+nav li{
+    margin: 4rem 0;
+}
+nav .fs-1{
+    font-size: 1.5rem;
+    font-weight: 700;
+}
+
+nav a:hover{
+    color: var(--soft-orange);
+}
+
+@media only screen and (min-width: 900px){
+    nav ul{
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        width: 500px;
+    }
+    main{
+        width: 100%;
+    }
+    .menu{
+        display: none;
+    }
+    ul{
+        display: block;
+    }
+    .main{
+        grid-template-columns: repeat(3, 1fr);
+        grid-gap: 1rem;
+        margin-top: 2rem;
+    }
+    .banner-img{
+        grid-column: 1 / 3;
+    }
+    .new-feature{
+        grid-column: 3 / 4;
+        grid-row: 1 / 3;
+        margin-top: 0;
+    }
+    .new p{
+        font-size:90%;
+    }
+    .title-container{
+        grid-column: 1 / 2;
+        grid-row: 2 / 3;
+    }
+    .description{
+        grid-column: 2 / 3;
+        grid-row: 2 / 3;
+    }
+    .products{
+        grid-column: 1 / 4;
+    }
+    .product{
+        grid-column: span 1;
+    }
+
+    header{
+        position: static;
+    }
+    #sideNav{
+        position: static;
+        z-index: 0;
+        display: block;
+        height: 0;
+        width: auto;
+        background-color: transparent;
+        display: block;
+    }
+    nav ul{
+        text-align:left;
+        padding: 0;
+    }
+    nav li{
+        margin: 0;
+    }
+    nav .fs-1{
+        font-size: 1rem;
+        font-weight: 400;
+    }
+}
+
+@media only screen and (min-width: 1000px){
+    .new p{
+        font-size:100%;
+    }
+}
